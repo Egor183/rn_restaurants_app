@@ -8,11 +8,16 @@
  * @format
  */
 
-import React, {FC} from 'react';
+import React, {FC, useEffect} from 'react';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
+import SplashScreen from 'react-native-splash-screen';
 import RootNavigation from './navigators';
 
 const App: FC = () => {
+  useEffect(() => {
+    SplashScreen.hide();
+  }, []);
+
   return (
     <SafeAreaProvider>
       <RootNavigation />
