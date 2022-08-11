@@ -1,66 +1,52 @@
-import React from 'react';
-import {
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  useColorScheme,
-  View,
-} from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import React, {memo} from 'react';
+import {Pressable, StatusBar, Text, useColorScheme, View} from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
+import MainContainer from '@src/components/MainContainer';
+import {COLORS, THEME} from '@src/constants';
 import {useLogin} from '../../hooks';
-
 import InputRow from './InputRow';
 
+import styles from './styles';
+
 const Login = () => {
-  const styles = StyleSheet.create({
-    flexOne: {},
-    container: {},
-    btn: {},
-    txt: {},
-  });
-  const isDarkMode = useColorScheme() === 'dark';
+  const isDarkMode = useColorScheme() === THEME.THEMES.DARK;
   var password = '';
   var email = '';
 
   const {submit} = useLogin({email, password});
 
-  function onChangePassword(newpass: string) {
-    password = newpass;
-  }
-
-  function onChangeUsername(newemail: string) {
-    email = newemail;
-  }
+  const barStyle = isDarkMode
+    ? THEME.STATUS_BAR_THEMES.LIGHT_CONTENT
+    : THEME.STATUS_BAR_THEMES.DARK_CONTENT;
 
   return (
-    <SafeAreaView>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <View style={styles.container}>
-          <InputRow
-            label="Email"
-            value={email}
-            onChangeText={onChangeUsername}
-          />
+    <MainContainer>
+      <LinearGradient
+        colors={COLORS.GRADIENTS.PURPLE_BLUE}
+        style={styles.linearGradient}
+        useAngle>
+        <StatusBar barStyle={barStyle} />
+      </LinearGradient>
+      <View style={styles.loginFormContainer}>
+        <Text style={styles.mainText}>Welcome Back</Text>
+        <Text style={styles.additionalText}>
+          Hello there, sign in to continue
+        </Text>
+        <View style={styles.formContainer}>
+          <InputRow label="Email" value={email} onChangeText={() => null} />
           <InputRow
             label="Password"
             value={password}
-            onChangeText={onChangePassword}
+            onChangeText={() => null}
             secureTextEntry={true}
           />
-          <TouchableOpacity
-            onPress={function () {
-              submit();
-            }}
-            style={styles.btn}>
-            <Text style={styles.txt}>Login</Text>
-          </TouchableOpacity>
+          <Pressable onPress={submit} style={styles.button}>
+            <Text style={styles.buttonText}>Sign in</Text>
+          </Pressable>
         </View>
-      </ScrollView>
-    </SafeAreaView>
+      </View>
+    </MainContainer>
   );
 };
 
-export default Login;
+export default memo(Login);
