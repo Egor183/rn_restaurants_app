@@ -10,7 +10,6 @@ const styles = ScaledSheet.create({
   loginFormContainer: {
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
-    flex: 1.2,
     paddingTop: setModerateVerticalScale(50),
     paddingHorizontal: setModerateScale(32),
     marginTop: -20,
@@ -19,12 +18,14 @@ const styles = ScaledSheet.create({
 
   mainText: {
     fontSize: setModerateScale(24),
+    fontFamily: 'Roboto-Medium',
   },
 
   additionalText: {
     fontSize: setModerateScale(14),
     marginTop: setModerateVerticalScale(5),
     color: COLORS.COLORS.DARK_GRAY,
+    fontFamily: 'Roboto-Regular',
   },
 
   formContainer: {
@@ -35,13 +36,15 @@ const styles = ScaledSheet.create({
     backgroundColor: COLORS.COLORS.MEDIUM_GRAY,
     height: setModerateVerticalScale(40),
     borderRadius: 15,
-    marginTop: setModerateVerticalScale(50),
+    marginTop: setModerateVerticalScale(20),
+    marginBottom: setModerateVerticalScale(80),
     alignItems: 'center',
     justifyContent: 'center',
   },
 
   buttonText: {
     color: COLORS.COLORS.WHITE,
+    fontFamily: 'Roboto-Medium',
   },
 });
 export default styles;

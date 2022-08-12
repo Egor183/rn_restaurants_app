@@ -1,7 +1,12 @@
 const emailRegex = /^[A-Z0-9._%+-][@][A-Z0-9.-]+\.[A-Z]{2,}$/i;
 
-//TODO: add the types later
-export const validateAuth = ({email, password}) => {
+export const validateAuth = ({
+  email,
+  password,
+}: {
+  email: string;
+  password: string;
+}) => {
   const errors = {email: '', password: ''};
   if (!email) {
     errors.email = 'Required Email';

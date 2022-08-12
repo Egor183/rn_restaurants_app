@@ -1,16 +1,11 @@
-import React, {memo, ReactNode} from 'react';
-import {Edge, SafeAreaView} from 'react-native-safe-area-context';
+import React, {FC, memo} from 'react';
+import {SafeAreaView} from 'react-native-safe-area-context';
 import {GLOBAL} from '@src/constants';
+import {Props} from './props';
 
 import styles from './styles';
 
-type Props = {
-  children: ReactNode;
-  edges?: Edge[];
-  backgroundColor?: string;
-};
-
-const MainContainer: React.FC<Props> = ({
+const MainContainer: FC<Props> = ({
   children,
   edges = [GLOBAL.EDGES.LEFT, GLOBAL.EDGES.RIGHT],
   backgroundColor,

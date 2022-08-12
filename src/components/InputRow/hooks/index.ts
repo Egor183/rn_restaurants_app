@@ -1,0 +1,1 @@
+export {useInputRowRightIcon} from './useInputRowRightIcon';
