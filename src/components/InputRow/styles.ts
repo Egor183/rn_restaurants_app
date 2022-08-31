@@ -10,7 +10,7 @@ const styles = ScaledSheet.create({
 
   inputContainerStyle: {
     borderBottomWidth: 0,
-    backgroundColor: COLORS.COLORS.LIGHT_GRAY,
+    backgroundColor: COLORS.LIGHT_GRAY,
     borderRadius: 10,
     paddingHorizontal: setModerateScale(20),
     height: setModerateVerticalScale(40),

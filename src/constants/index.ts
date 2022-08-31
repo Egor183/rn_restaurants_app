@@ -1,5 +1,4 @@
-import * as THEME from './theme';
-import * as GLOBAL from './global';
-import * as COLORS from './colors';
-
-export {THEME, GLOBAL, COLORS};
+export {THEMES, STATUS_BAR_THEMES} from './theme';
+export {EDGES} from './global';
+export {COLORS, GRADIENTS} from './colors';
+export {ERRORS} from './errors';

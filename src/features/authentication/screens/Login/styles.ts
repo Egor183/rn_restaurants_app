@@ -24,7 +24,7 @@ const styles = ScaledSheet.create({
   additionalText: {
     fontSize: setModerateScale(14),
     marginTop: setModerateVerticalScale(5),
-    color: COLORS.COLORS.DARK_GRAY,
+    color: COLORS.DARK_GRAY,
     fontFamily: 'Roboto-Regular',
   },
 
@@ -33,7 +33,7 @@ const styles = ScaledSheet.create({
   },
 
   button: {
-    backgroundColor: COLORS.COLORS.MEDIUM_GRAY,
+    backgroundColor: COLORS.MEDIUM_GRAY,
     height: setModerateVerticalScale(40),
     borderRadius: 15,
     marginTop: setModerateVerticalScale(20),
@@ -43,7 +43,7 @@ const styles = ScaledSheet.create({
   },
 
   buttonText: {
-    color: COLORS.COLORS.WHITE,
+    color: COLORS.WHITE,
     fontFamily: 'Roboto-Medium',
   },
 });

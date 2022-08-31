@@ -8,6 +8,7 @@
  * @format
  */
 
+import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
 import React, {FC, useEffect} from 'react';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import SplashScreen from 'react-native-splash-screen';
@@ -18,10 +19,14 @@ const App: FC = () => {
     SplashScreen.hide();
   }, []);
 
+  const queryClient = new QueryClient();
+
   return (
-    <SafeAreaProvider>
-      <RootNavigation />
-    </SafeAreaProvider>
+    <QueryClientProvider client={queryClient}>
+      <SafeAreaProvider>
+        <RootNavigation />
+      </SafeAreaProvider>
+    </QueryClientProvider>
   );
 };
 

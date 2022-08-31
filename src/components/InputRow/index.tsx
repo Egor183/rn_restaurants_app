@@ -10,6 +10,9 @@ const InputRow: FC<Props> = ({
   isValueValid,
   secureTextEntry,
   renderErrorMessage = false,
+  onChangeText,
+  value,
+  editable,
 }) => {
   const rightIcon = useInputRowRightIcon(isValueValid);
 
@@ -23,6 +26,9 @@ const InputRow: FC<Props> = ({
       inputStyle={styles.inputStyle}
       secureTextEntry={secureTextEntry}
       renderErrorMessage={renderErrorMessage}
+      onChangeText={onChangeText}
+      value={value}
+      editable={editable}
     />
   );
 };

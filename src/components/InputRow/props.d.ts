@@ -1,8 +1,5 @@
-import {TextInputProps} from 'react-native';
+import {InputProps} from '@rneui/base';
 
-interface Props extends TextInputProps {
-  label: string;
-  secureTextEntry?: boolean;
+interface Props extends InputProps {
   isValueValid?: boolean;
-  renderErrorMessage?: boolean;
 }
