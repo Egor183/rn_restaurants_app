@@ -1,6 +1,7 @@
 import React, {FC, memo} from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {COLORS, EDGES} from '@src/constants';
+import {withLoading} from '@src/HOCs';
 import {Props} from './props';
 
 import styles from './styles';
@@ -22,4 +23,4 @@ const MainContainer: FC<Props> = ({
   </SafeAreaView>
 );
 
-export default memo(MainContainer);
+export default withLoading(memo(MainContainer));

@@ -3,5 +3,4 @@ export interface Props {
   edges?: Edge[];
   backgroundColor?: string;
   withPaddingHorizontal?: boolean;
-  withHeader?: boolean;
 }

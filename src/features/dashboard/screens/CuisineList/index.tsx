@@ -2,7 +2,6 @@ import React, {FC, memo} from 'react';
 import {FlatList, View} from 'react-native';
 import {useNavigation} from '@src/hooks';
 import Header from '@src/components/Header';
-import Loader from '@src/components/Loader';
 import MainContainer from '@src/components/MainContainer';
 import ButtonBack from '@src/components/Buttons/ButtonBack';
 import {useCuisines} from '../../hooks';
@@ -21,12 +20,8 @@ const CuisineList: FC = () => {
     </View>
   );
 
-  if (isLoading) {
-    return <Loader />;
-  }
-
   return (
-    <MainContainer>
+    <MainContainer isLoading={isLoading}>
       <Header leftComponent={<ButtonBack onPress={goBack} />} />
       <FlatList
         onRefresh={handleRefresh}

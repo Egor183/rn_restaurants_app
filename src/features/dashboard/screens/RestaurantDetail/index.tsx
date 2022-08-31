@@ -1,11 +1,10 @@
 import React, {FC, memo} from 'react';
 import {ImageBackground, StatusBar, Text, View} from 'react-native';
 import {COLORS} from '@src/constants';
-import {useNavigation} from '@src/hooks';
+import {useBarStyle, useNavigation} from '@src/hooks';
 import MainContainer from '@src/components/MainContainer';
 import Header from '@src/components/Header';
 import ButtonBack from '@src/components/Buttons/ButtonBack';
-import {useBarStyle} from '@src/features/authentication/hooks';
 import BlueBadge from '../../components/BlueBadge';
 import {useRestaurantDetail} from '../../hooks/useRestaurantDetail';
 import WhiteBadge from './components/WhiteBadge';

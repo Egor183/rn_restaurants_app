@@ -1,22 +1,23 @@
-import React, {memo} from 'react';
+import React, {FC, memo} from 'react';
 import {Pressable, StatusBar, Text, View} from 'react-native';
 import {Formik} from 'formik';
 import LinearGradient from 'react-native-linear-gradient';
 import MainContainer from '@src/components/MainContainer';
 import {GRADIENTS} from '@src/constants';
 import InputRow from '@src/components/InputRow';
-import {useBarStyle, useLogin} from '../../hooks';
+import {useBarStyle} from '@src/hooks';
+import {useLogin} from '../../hooks';
 import {LoginParametersType} from '../../services/api/login/types';
 
 import styles from './styles';
 
-const Login = () => {
+const Login: FC = () => {
   const {handlePressSignIn, validationError, isLoading} = useLogin();
   const barStyle = useBarStyle();
   const initialValues: LoginParametersType = {email: '', password: ''};
 
   return (
-    <MainContainer withHeader={false} withPaddingHorizontal={false}>
+    <MainContainer withPaddingHorizontal={false}>
       <LinearGradient
         colors={GRADIENTS.PURPLE_BLUE}
         style={styles.linearGradient}
