@@ -6,11 +6,18 @@ export const selectCuisineIds = createSelector(
   cuisineIds => cuisineIds,
 );
 
-export const selectCuisineData = createSelector(
+const selectCuisinesData = createSelector(
   (state: RootState) => state.cuisine.cuisinesData,
   cuisineData => cuisineData,
 );
 
+export const selectCuisineData = createSelector(
+  selectCuisinesData,
+  (state: RootState, id: string) => id,
+  (cuisinesData, id) => cuisinesData[id],
+);
+
 export const selectors = {
   selectCuisineIds,
+  selectCuisineData,
 };

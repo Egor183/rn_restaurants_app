@@ -1,6 +1,6 @@
 import React, {FC, memo} from 'react';
 import {Header as ReactNativeElementsHeader} from '@rneui/themed';
-import {Props} from './props';
+import {HeaderProps as Props} from './props';
 
 import styles from './styles';
 

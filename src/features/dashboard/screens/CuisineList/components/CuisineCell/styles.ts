@@ -21,6 +21,7 @@ const styles = ScaledSheet.create({
     fontFamily: 'Roboto-Medium',
     fontSize: setModerateVerticalScale(16),
     color: COLORS.LIGHT_BLACK,
+    textTransform: 'capitalize',
   },
 
   regularGrayText: {

@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import {useAppSelector} from '@src/hooks/useAppSelector';
+import {useAppSelector} from '@src/hooks';
 import {loginSelectors} from '@src/features/authentication/models/login';
 import AuthenticationNavigation from './authentication';
 import DashboardNavigation from './dashboard';

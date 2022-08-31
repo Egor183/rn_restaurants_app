@@ -2,8 +2,7 @@ import {AxiosError} from 'axios';
 import {useQuery} from '@tanstack/react-query';
 import {ERRORS} from '@src/constants';
 import {getTimeInMinutes, getTimeInSeconds, showError} from '@src/helpers';
-import {useAppSelector} from '@src/hooks/useAppSelector';
-import {useAppDispatch} from '@src/hooks/useAppDispatch';
+import {useAppDispatch, useAppSelector} from '@src/hooks';
 import {
   cuisineActions,
   cuisineSelectors,

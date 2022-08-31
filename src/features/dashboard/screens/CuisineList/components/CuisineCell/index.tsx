@@ -1,18 +1,22 @@
-import React, {memo} from 'react';
+import React, {FC, memo} from 'react';
 import {ImageBackground, Text, View} from 'react-native';
+import {useCuisineCell} from '../../../../hooks';
+import {Props} from './types';
 
 import styles from './styles';
 
-const CuisineCell = () => {
+const CuisineCell: FC<Props> = ({id}) => {
+  const {numberOfPlaces, cuisineName, cuisineImage} = useCuisineCell(id);
+
   return (
     <ImageBackground
       source={{
-        uri: 'https://media.istockphoto.com/photos/beautiful-panoramic-view-of-tbilisi-at-sunset-picture-id476813550?k=20&m=476813550&s=612x612&w=0&h=nkgs_znOulcr77969-rB-mQ4Tyr8qN53crzMASFZlDU=',
+        uri: cuisineImage,
       }}
       style={styles.mainContainer}>
       <View style={styles.contentContainer}>
-        <Text style={styles.mediumBlackText}>Chinese</Text>
-        <Text style={styles.regularGrayText}>32 places</Text>
+        <Text style={styles.mediumBlackText}>{cuisineName}</Text>
+        <Text style={styles.regularGrayText}>{numberOfPlaces} places</Text>
       </View>
     </ImageBackground>
   );

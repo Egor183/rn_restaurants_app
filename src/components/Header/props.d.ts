@@ -1,5 +1,5 @@
-import {HeaderProps} from '@rneui/themed';
+import {HeaderProps as ReactNativeElementsHeaderProps} from '@rneui/themed';
 
-interface Props extends HeaderProps {
+export interface HeaderProps extends ReactNativeElementsHeaderProps {
   title?: string;
 }

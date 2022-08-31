@@ -6,11 +6,11 @@ enum CUISINE_NAMES {
 
 export const CUISINE_IMAGES = {
   [CUISINE_NAMES.CHINESE]:
-    'https://d4t7t8y8xqo0t.cloudfront.net/resized/750X436/eazytrendz%2F3194%2Ftrend20210823114529.jpg',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLRuy3n0TF6VhWwmBcbOe4K32ADy5nvwBnqYihRFqBWSFloW7jtzzJPRcTblCh1gKwRdM&usqp=CAU',
   [CUISINE_NAMES.INDIAN]:
-    'https://www.blueosa.com/wp-content/uploads/2020/01/the-best-top-10-indian-dishes.jpg',
+    'https://africa-images.com/public/photos/c/a/caqEQwmpNjCQiEfsGcSPVlYMi/caqEQwmpNjCQiEfsGcSPVlYMi_smaller.jpg',
   [CUISINE_NAMES.ITALIAN]:
-    'https://assets.site-static.com/userFiles/1621/image/italian-food-in-durango.jpg',
+    'https://i.pinimg.com/736x/ed/d7/36/edd736469bcd7ac619a8cc3540809d40.jpg',
 };
 
 export const CUISINE_QUERY_PARAMS = {
