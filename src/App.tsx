@@ -10,7 +10,10 @@
 
 import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
 import React, {FC, useEffect} from 'react';
-import {SafeAreaProvider} from 'react-native-safe-area-context';
+import {
+  initialWindowMetrics,
+  SafeAreaProvider,
+} from 'react-native-safe-area-context';
 import SplashScreen from 'react-native-splash-screen';
 import RootNavigation from './navigators';
 
@@ -23,7 +26,7 @@ const App: FC = () => {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <SafeAreaProvider>
+      <SafeAreaProvider initialMetrics={initialWindowMetrics}>
         <RootNavigation />
       </SafeAreaProvider>
     </QueryClientProvider>
