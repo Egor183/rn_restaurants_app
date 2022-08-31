@@ -19,6 +19,7 @@ const styles = ScaledSheet.create({
   mainText: {
     fontSize: setModerateScale(24),
     fontFamily: 'Roboto-Medium',
+    color: COLORS.LIGHT_BLACK,
   },
 
   additionalText: {
@@ -47,4 +48,5 @@ const styles = ScaledSheet.create({
     fontFamily: 'Roboto-Medium',
   },
 });
+
 export default styles;

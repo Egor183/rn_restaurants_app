@@ -320,7 +320,7 @@ def isNewArchitectureEnabled() {
 }
 
 project.ext.vectoricons = [
-    iconFontNames: [ 'MaterialCommunityIcons.ttf' ]
+    iconFontNames: [ 'MaterialCommunityIcons.ttf', 'Entypo.ttf' ]
 ]
 
 apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"

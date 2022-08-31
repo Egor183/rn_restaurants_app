@@ -1,7 +1,8 @@
-import {useEffect} from 'react';
-import {ScrollView} from 'react-native';
+import ButtonBack from '@src/components/Buttons/ButtonBack';
+import Header from '@src/components/Header';
+import MainContainer from '@src/components/MainContainer';
+import React, {memo, useEffect} from 'react';
 import {useCuisines} from '../../hooks';
-import CuisineCell from './components/Cell';
 
 const CuisineList = () => {
   const {cuisines, error, fetch} = useCuisines();
@@ -14,14 +15,11 @@ const CuisineList = () => {
     fetch();
   }, [fetch]);
 
-  //TODO: I feel like this not the best solution. later I will refactor it.
   return (
-    <ScrollView>
-      {cuisines.map(item => (
-        <CuisineCell />
-      ))}
-    </ScrollView>
+    <MainContainer withPaddingHorizontal>
+      <Header leftComponent={<ButtonBack />} />
+    </MainContainer>
   );
 };
 
-export default CuisineList;
+export default memo(CuisineList);

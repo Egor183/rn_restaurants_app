@@ -6,6 +6,8 @@ export enum COLORS {
   MEDIUM_GRAY = '#C6C8CF',
   LIGHT_GRAY = '#f0efef',
   DARK_RED = '#C10303',
+  LIGHT_BLACK = '#333233',
+  TRANSPARENT = 'transparent',
 }
 
 export const GRADIENTS = {

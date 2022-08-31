@@ -1,6 +1,6 @@
 import React, {FC, memo} from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import {EDGES} from '@src/constants';
+import {COLORS, EDGES} from '@src/constants';
 import {Props} from './props';
 
 import styles from './styles';
@@ -8,9 +8,16 @@ import styles from './styles';
 const MainContainer: FC<Props> = ({
   children,
   edges = [EDGES.LEFT, EDGES.RIGHT],
-  backgroundColor,
+  backgroundColor = COLORS.WHITE,
+  withPaddingHorizontal,
 }) => (
-  <SafeAreaView style={[styles.mainContainer, {backgroundColor}]} edges={edges}>
+  <SafeAreaView
+    style={[
+      styles.mainContainer,
+      {backgroundColor},
+      withPaddingHorizontal && styles.paddingHorizontal,
+    ]}
+    edges={edges}>
     {children}
   </SafeAreaView>
 );
