@@ -5,14 +5,14 @@ import {setModerateScale} from '@src/services/scale';
 const styles = ScaledSheet.create({
   badge: {
     backgroundColor: COLORS.WHITE,
-    paddingVertical: setModerateScale(8),
-    paddingHorizontal: setModerateScale(12),
+    paddingVertical: setModerateScale(6),
+    paddingHorizontal: setModerateScale(10),
     borderRadius: 5,
     overflow: 'hidden',
     fontFamily: 'Roboto-Medium',
     color: COLORS.LIGHT_BLACK,
-    letterSpacing: setModerateScale(0.5),
-    fontSize: setModerateScale(14),
+    letterSpacing: setModerateScale(0.1),
+    fontSize: setModerateScale(11),
     textTransform: 'uppercase',
     alignSelf: 'flex-start',
   },

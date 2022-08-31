@@ -4,7 +4,6 @@ import {Image, Pressable, Text, View} from 'react-native';
 import {Icon} from '@rneui/themed';
 import {COLORS, CURRENCY_SYMBOLS, TEXT_SYMBOLS} from '@src/constants';
 import {useRestaurantCell} from '@src/features/dashboard/hooks';
-import {getRestaurantRatingIconParams} from '@src/features/dashboard/helpers';
 import BlueBadge from '@src/features/dashboard/components/BlueBadge';
 import {DELIVERY_ICON_PARAMS} from '@src/features/dashboard/constants';
 import {Props} from './props';
@@ -23,10 +22,14 @@ const RestaurantCell: FC<Props> = ({id}) => {
       currency,
       deliveryCost,
     },
+    handlePressCuisineCell,
+    restaurantRatingIconParams,
   } = useRestaurantCell(id);
 
   return (
-    <Pressable style={[styles.container, styles.shadow]}>
+    <Pressable
+      style={[styles.container, styles.shadow]}
+      onPress={handlePressCuisineCell}>
       <Image
         source={{
           uri: imageUrl,
@@ -61,10 +64,10 @@ const RestaurantCell: FC<Props> = ({id}) => {
           {TEXT_SYMBOLS.MIDDLE_DOT}
           {TEXT_SYMBOLS.DOUBLE_SPACE}
         </Text>
-        <Icon {...getRestaurantRatingIconParams(rating)} />
+        <Icon {...restaurantRatingIconParams} />
         <Text style={styles.regularGrayText}>
           {TEXT_SYMBOLS.DOUBLE_SPACE}
-          {rating}
+          {rating.toFixed(1)}
         </Text>
       </View>
     </Pressable>

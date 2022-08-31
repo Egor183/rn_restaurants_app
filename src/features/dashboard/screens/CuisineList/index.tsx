@@ -25,8 +25,8 @@ const CuisineList = () => {
 
   return (
     <MainContainer>
+      <Header leftComponent={<ButtonBack />} />
       <FlatList
-        ListHeaderComponent={<Header leftComponent={<ButtonBack />} />}
         renderItem={renderItem}
         keyExtractor={item => item}
         data={cuisines}

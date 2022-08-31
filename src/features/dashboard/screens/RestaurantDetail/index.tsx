@@ -1,21 +1,29 @@
 import React, {memo} from 'react';
 import {ImageBackground, StatusBar, Text, View} from 'react-native';
-import {
-  COLORS,
-  SMILES_SYMBOLS,
-  STATUS_BAR_THEMES,
-  TEXT_SYMBOLS,
-} from '@src/constants';
+import {COLORS, STATUS_BAR_THEMES} from '@src/constants';
 import {useNavigation} from '@src/hooks';
 import MainContainer from '@src/components/MainContainer';
 import Header from '@src/components/Header';
 import ButtonBack from '@src/components/Buttons/ButtonBack';
 import BlueBadge from '../../components/BlueBadge';
+import {useRestaurantDetail} from '../../hooks/useRestaurantDetail';
 import WhiteBadge from './components/WhiteBadge';
 
 import styles from './styles';
 
 const RestaurantDetail = () => {
+  const {
+    restaurantData: {
+      imageUrl,
+      deliveryCost,
+      minOrder,
+      restaurantName,
+      shortDesc,
+      rating,
+      speciality,
+      restaurantRatingDescription,
+    },
+  } = useRestaurantDetail();
   const {goBack} = useNavigation();
 
   return (
@@ -31,30 +39,25 @@ const RestaurantDetail = () => {
       </View>
       <ImageBackground
         source={{
-          uri: 'https://media.istockphoto.com/photos/beautiful-panoramic-view-of-tbilisi-at-sunset-picture-id476813550?k=20&m=476813550&s=612x612&w=0&h=nkgs_znOulcr77969-rB-mQ4Tyr8qN53crzMASFZlDU=',
+          uri: imageUrl,
         }}
         style={styles.imageBackground}>
         <View style={[styles.whiteBadgeContainer, styles.ph24]}>
-          <View style={styles.mr15}>
-            <WhiteBadge text="Hihoijpo" />
+          <View style={styles.mr10}>
+            <WhiteBadge text={`Delivery: ${deliveryCost}`} />
           </View>
-          <WhiteBadge text="Hihoijpo" />
+          <WhiteBadge text={`MIN. ORDER: ${minOrder.toFixed(2)}`} />
         </View>
       </ImageBackground>
       <View style={styles.ph24}>
-        <Text style={styles.mediumBlackText}>
-          Risto{TEXT_SYMBOLS.DOUBLE_SPACE}ran te
-        </Text>
-        <Text style={[styles.regularGrayText, styles.mt10]}>
-          Ristorante;{TEXT_SYMBOLS.TRIPLE_SPACE}
-        </Text>
+        <Text style={styles.mediumBlackText}>{restaurantName}</Text>
+        <Text style={[styles.regularGrayText, styles.mt10]}>{shortDesc}</Text>
         <Text style={[styles.regularBlackText, styles.mt10]}>
-          {SMILES_SYMBOLS.SAD}
-          {TEXT_SYMBOLS.TRIPLE_SPACE}Ristorante
+          {restaurantRatingDescription} {rating.toFixed(1)}
         </Text>
         <View style={styles.blueBadgeContainer}>
           <BlueBadge
-            mainText="okpokopk"
+            mainText={speciality}
             mainTextStyles={styles.blueBadgeMainTextStyles}
             containerStyles={styles.blueBadgeContainerStyles}
           />

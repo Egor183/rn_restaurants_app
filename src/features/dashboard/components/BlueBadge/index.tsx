@@ -9,13 +9,19 @@ const BlueBadge: FC<Props> = ({
   additionalText,
   containerStyles,
   mainTextStyles,
-}) => (
-  <View style={[styles.containerStyles, containerStyles]}>
-    <Text style={[styles.mainTextStyles, mainTextStyles]}>{mainText}</Text>
-    {additionalText ? (
-      <Text style={styles.additionalTextStyles}>{additionalText}</Text>
-    ) : null}
-  </View>
-);
+}) => {
+  if (!mainText) {
+    return null;
+  }
+
+  return (
+    <View style={[styles.containerStyles, containerStyles]}>
+      <Text style={[styles.mainTextStyles, mainTextStyles]}>{mainText}</Text>
+      {additionalText ? (
+        <Text style={styles.additionalTextStyles}>{additionalText}</Text>
+      ) : null}
+    </View>
+  );
+};
 
 export default memo(BlueBadge);

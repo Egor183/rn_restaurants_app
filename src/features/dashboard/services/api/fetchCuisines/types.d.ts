@@ -12,6 +12,7 @@ type RestaurantDataType = {
   rating: number;
   restaurantName: string;
   shortDesc: string;
+  speciality: string;
 };
 
 type RestaurantsDataWithStatusType = Record<

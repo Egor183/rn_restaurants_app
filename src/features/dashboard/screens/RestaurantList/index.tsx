@@ -21,10 +21,8 @@ const RestaurantList = () => {
 
   return (
     <MainContainer>
+      <Header leftComponent={<ButtonBack onPress={goBack} />} />
       <FlatList
-        ListHeaderComponent={
-          <Header leftComponent={<ButtonBack onPress={goBack} />} />
-        }
         renderItem={renderItem}
         keyExtractor={item => item}
         data={restaurantsIds}

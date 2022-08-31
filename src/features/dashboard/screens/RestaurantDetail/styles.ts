@@ -32,8 +32,8 @@ const styles = ScaledSheet.create({
     flexDirection: 'row',
   },
 
-  mr15: {
-    marginRight: setModerateScale(15),
+  mr10: {
+    marginRight: setModerateScale(10),
   },
 
   mediumBlackText: {
