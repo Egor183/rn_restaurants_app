@@ -70,7 +70,7 @@ const styles = ScaledSheet.create({
     justifyContent: 'space-between',
   },
 
-  deliveryTimeContainer: {
+  blueBadge: {
     backgroundColor: COLORS.LIGHT_BLUE,
     padding: setModerateScale(7),
     borderRadius: 10,

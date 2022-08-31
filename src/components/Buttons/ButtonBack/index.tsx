@@ -10,6 +10,7 @@ const ButtonBack: FC<Props> = ({
   iconSize = moderateVerticalScale(20),
   isLeftHeaderComponent = true,
   onPress,
+  iconColor = COLORS.LIGHT_BLACK,
 }) => (
   <Button
     color={COLORS.TRANSPARENT}
@@ -17,7 +18,7 @@ const ButtonBack: FC<Props> = ({
     onPress={onPress}>
     <Icon
       name="chevron-thin-left"
-      color={COLORS.LIGHT_BLACK}
+      color={iconColor}
       size={iconSize}
       type="entypo"
     />

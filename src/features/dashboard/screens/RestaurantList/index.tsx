@@ -5,23 +5,26 @@ import MainContainer from '@src/components/MainContainer';
 import ButtonBack from '@src/components/Buttons/ButtonBack';
 import {useRestaurants} from '../../hooks';
 import RestaurantCell from './components/RestaurantCell';
-import {RenderItemType} from './types';
 
 import styles from './styles';
+import Header from '@src/components/Header';
 
 const RestaurantList = () => {
   const {restaurantsIds} = useRestaurants();
   const {goBack} = useNavigation();
 
-  const renderItem = ({item}: RenderItemType) => (
+  const renderItem = ({item}: {item: string}) => (
     <View style={styles.restaurantCellContainer}>
       <RestaurantCell key={item} id={item} />
     </View>
   );
 
   return (
-    <MainContainer leftComponent={<ButtonBack onPress={goBack} />}>
+    <MainContainer>
       <FlatList
+        ListHeaderComponent={
+          <Header leftComponent={<ButtonBack onPress={goBack} />} />
+        }
         renderItem={renderItem}
         keyExtractor={item => item}
         data={restaurantsIds}

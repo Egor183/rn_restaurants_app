@@ -11,7 +11,7 @@ const Stack = createNativeStackNavigator<DashboardStackParamList>();
 const DashboardNavigation: FC = () => {
   return (
     <Stack.Navigator
-      initialRouteName={ROUTES.CUISINES}
+      initialRouteName={ROUTES.RESTAURANT_DETAIL}
       screenOptions={{
         headerShown: false,
       }}>

@@ -1,5 +1,6 @@
 import React, {memo} from 'react';
 import {FlatList, View} from 'react-native';
+import Header from '@src/components/Header';
 import MainContainer from '@src/components/MainContainer';
 import ButtonBack from '@src/components/Buttons/ButtonBack';
 import Loader from '@src/components/Loader';
@@ -23,8 +24,9 @@ const CuisineList = () => {
   }
 
   return (
-    <MainContainer leftComponent={<ButtonBack />}>
+    <MainContainer>
       <FlatList
+        ListHeaderComponent={<Header leftComponent={<ButtonBack />} />}
         renderItem={renderItem}
         keyExtractor={item => item}
         data={cuisines}

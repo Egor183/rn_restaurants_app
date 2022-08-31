@@ -1,6 +1,4 @@
-import {HeaderProps} from '../Header/props';
-
-export interface Props extends HeaderProps {
+export interface Props {
   children: ReactNode;
   edges?: Edge[];
   backgroundColor?: string;

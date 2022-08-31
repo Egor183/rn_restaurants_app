@@ -5,6 +5,6 @@ export const useBarStyle = () => {
   const isDarkMode = useColorScheme() === THEMES.DARK;
 
   return isDarkMode
-    ? STATUS_BAR_THEMES.LIGHT_CONTENT
-    : STATUS_BAR_THEMES.DARK_CONTENT;
+    ? STATUS_BAR_THEMES.DARK_CONTENT
+    : STATUS_BAR_THEMES.LIGHT_CONTENT;
 };

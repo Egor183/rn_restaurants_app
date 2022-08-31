@@ -3,4 +3,4 @@ export {EDGES} from './global';
 export {COLORS, GRADIENTS} from './colors';
 export {ERRORS} from './errors';
 export {TIME_AMOUNT} from './time';
-export {CURRENCY_SYMBOLS} from './symbols';
+export {CURRENCY_SYMBOLS, TEXT_SYMBOLS, SMILES_SYMBOLS} from './symbols';
