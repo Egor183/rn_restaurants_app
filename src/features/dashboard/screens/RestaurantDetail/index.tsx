@@ -1,17 +1,19 @@
-import React, {memo} from 'react';
+import React, {FC, memo} from 'react';
 import {ImageBackground, StatusBar, Text, View} from 'react-native';
-import {COLORS, STATUS_BAR_THEMES} from '@src/constants';
+import {COLORS} from '@src/constants';
 import {useNavigation} from '@src/hooks';
 import MainContainer from '@src/components/MainContainer';
 import Header from '@src/components/Header';
 import ButtonBack from '@src/components/Buttons/ButtonBack';
+import {useBarStyle} from '@src/features/authentication/hooks';
 import BlueBadge from '../../components/BlueBadge';
 import {useRestaurantDetail} from '../../hooks/useRestaurantDetail';
 import WhiteBadge from './components/WhiteBadge';
+import {RestaurantDetailNativeStackNavigationNavigationType} from './types';
 
 import styles from './styles';
 
-const RestaurantDetail = () => {
+const RestaurantDetail: FC = () => {
   const {
     restaurantData: {
       imageUrl,
@@ -24,7 +26,9 @@ const RestaurantDetail = () => {
       restaurantRatingDescription,
     },
   } = useRestaurantDetail();
-  const {goBack} = useNavigation();
+  const {goBack} =
+    useNavigation<RestaurantDetailNativeStackNavigationNavigationType>();
+  const barStyle = useBarStyle();
 
   return (
     <MainContainer withPaddingHorizontal={false}>
@@ -35,7 +39,7 @@ const RestaurantDetail = () => {
           }
           containerStyle={styles.containerStyle}
         />
-        <StatusBar barStyle={STATUS_BAR_THEMES.LIGHT_CONTENT} />
+        <StatusBar barStyle={barStyle} />
       </View>
       <ImageBackground
         source={{

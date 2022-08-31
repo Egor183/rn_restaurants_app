@@ -34,7 +34,7 @@ const styles = ScaledSheet.create({
   },
 
   button: {
-    backgroundColor: COLORS.MEDIUM_GRAY,
+    backgroundColor: COLORS.DARK_BLUE,
     height: setModerateVerticalScale(40),
     borderRadius: 15,
     marginTop: setModerateVerticalScale(20),
@@ -46,6 +46,10 @@ const styles = ScaledSheet.create({
   buttonText: {
     color: COLORS.WHITE,
     fontFamily: 'Roboto-Medium',
+  },
+
+  inactiveButton: {
+    backgroundColor: COLORS.MEDIUM_GRAY,
   },
 });
 

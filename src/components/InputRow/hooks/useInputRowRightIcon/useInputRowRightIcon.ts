@@ -1,5 +1,5 @@
 import {useMemo} from 'react';
-import {INPUT_ICON_PARAMS} from '../constants';
+import {INPUT_ICON_PARAMS} from '../../constants';
 
 export const useInputRowRightIcon = (isValueValid?: boolean) => {
   return useMemo(() => {

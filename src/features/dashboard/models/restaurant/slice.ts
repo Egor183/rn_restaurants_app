@@ -1,11 +1,10 @@
-import {CuisinesRestaurantsIdsType, RestaurantStateType} from './types.d';
+import {RestaurantStateType} from './types.d';
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 
 type InitialStateType = RestaurantStateType;
 
 const initialState: InitialStateType = {
-  // similar situation like a CuisineData in cuisine slice
-  cuisinesRestaurantsIds: {} as CuisinesRestaurantsIdsType,
+  cuisinesRestaurantsIds: {},
   restaurantsData: {},
 };
 

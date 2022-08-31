@@ -1,4 +1,4 @@
-import React, {memo} from 'react';
+import React, {FC, memo} from 'react';
 import {FlatList, View} from 'react-native';
 import {useNavigation} from '@src/hooks';
 import MainContainer from '@src/components/MainContainer';
@@ -6,12 +6,14 @@ import ButtonBack from '@src/components/Buttons/ButtonBack';
 import Header from '@src/components/Header';
 import {useRestaurants} from '../../hooks';
 import RestaurantCell from './components/RestaurantCell';
+import {RestaurantNativeStackNavigationNavigationType} from './types';
 
 import styles from './styles';
 
-const RestaurantList = () => {
+const RestaurantList: FC = () => {
   const {restaurantsIds, cuisineId} = useRestaurants();
-  const {goBack} = useNavigation();
+  const {goBack} =
+    useNavigation<RestaurantNativeStackNavigationNavigationType>();
 
   const renderItem = ({item}: {item: string}) => (
     <View style={styles.restaurantCellContainer}>

@@ -8,21 +8,19 @@
  * @format
  */
 
-import React, {FC, useEffect} from 'react';
+import React, {FC} from 'react';
 import {Provider} from 'react-redux';
 import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
 import {
   initialWindowMetrics,
   SafeAreaProvider,
 } from 'react-native-safe-area-context';
-import SplashScreen from 'react-native-splash-screen';
 import {store} from '@src/store';
 import RootNavigation from './navigators';
+import {useSplashScreen} from './hooks';
 
 const App: FC = () => {
-  useEffect(() => {
-    SplashScreen.hide();
-  }, []);
+  useSplashScreen();
 
   const queryClient = new QueryClient();
 

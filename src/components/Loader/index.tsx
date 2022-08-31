@@ -1,9 +1,9 @@
-import React, {memo} from 'react';
+import React, {FC, memo} from 'react';
 import {Text, View} from 'react-native';
 
 import styles from './styles';
 
-const Loader = () => (
+const Loader: FC = () => (
   <View style={styles.container}>
     <Text style={styles.loaderText}>Loading...</Text>
   </View>

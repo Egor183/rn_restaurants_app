@@ -10,7 +10,7 @@ const RootNavigation: FC = () => {
 
   return (
     <NavigationContainer>
-      {!isLoggedIn ? <DashboardNavigation /> : <AuthenticationNavigation />}
+      {isLoggedIn ? <DashboardNavigation /> : <AuthenticationNavigation />}
     </NavigationContainer>
   );
 };

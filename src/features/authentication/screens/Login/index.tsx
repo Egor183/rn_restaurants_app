@@ -48,7 +48,7 @@ const Login = () => {
                   editable={!isLoading}
                 />
                 <Pressable
-                  style={styles.button}
+                  style={[styles.button, isLoading && styles.inactiveButton]}
                   onPress={handleSubmit}
                   disabled={isLoading}>
                   <Text style={styles.buttonText}>Sign in</Text>

@@ -1,1 +1,1 @@
-export {useInputRowRightIcon} from './useInputRowRightIcon';
+export {useInputRowRightIcon} from './useInputRowRightIcon/useInputRowRightIcon';

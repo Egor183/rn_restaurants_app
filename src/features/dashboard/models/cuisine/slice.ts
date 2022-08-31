@@ -1,15 +1,10 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
-import {CuisineDataType, CuisineStateType} from './types';
+import {CuisineStateType} from './types';
 
 type InitialStateType = CuisineStateType;
 
 const initialState: InitialStateType = {
-  /*
-  it is a safe decision and more scalable than writing default values for a
-  CuisineDataType here because we will not select the cuisinesData
-  before we don't fetch a cuisine data
-  */
-  cuisinesData: {} as CuisineDataType,
+  cuisinesData: {},
   cuisineIds: [],
 };
 

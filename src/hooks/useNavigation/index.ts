@@ -1,11 +1,17 @@
-import {useNavigation as useReactNavigation} from '@react-navigation/native';
+import {
+  NavigationProp,
+  ParamListBase,
+  useNavigation as useReactNavigation,
+} from '@react-navigation/native';
 
-export const useNavigation = () => {
+export const useNavigation = <
+  T extends NavigationProp<ParamListBase, string>,
+>() => {
   const {
     canGoBack,
     goBack: goBackReactNavigation,
     navigate: navigateReactNavigation,
-  } = useReactNavigation();
+  } = useReactNavigation<T>();
 
   const goBack = (): void => {
     if (!canGoBack()) {

@@ -18,7 +18,7 @@ import {CuisinesFetchDataType} from '../../services/api/fetchCuisines/types';
 import {CUISINE_QUERY_PARAMS} from '../../constants';
 
 export const useCuisines = () => {
-  const cuisines = useAppSelector(cuisineSelectors.selectCuisineIds);
+  const cuisinesIds = useAppSelector(cuisineSelectors.selectCuisineIds);
 
   const dispatch = useAppDispatch();
 
@@ -52,13 +52,13 @@ export const useCuisines = () => {
       return;
     }
 
-    return refetch();
+    refetch();
   }, [isStale, refetch]);
 
   useRefreshOnFocus<CuisinesFetchDataType>(refetch, isStale);
 
   return {
-    cuisines,
+    cuisinesIds,
     isLoading,
     handleRefresh,
     isStale,

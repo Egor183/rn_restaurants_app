@@ -3,10 +3,10 @@ import {AxiosError} from 'axios';
 import {useFocusEffect} from '@react-navigation/native';
 import {QueryObserverResult} from '@tanstack/react-query';
 
-export function useRefreshOnFocus<T>(
+export const useRefreshOnFocus = <T>(
   refetch: () => Promise<QueryObserverResult<T, AxiosError<string, number>>>,
   isStale: boolean,
-) {
+) => {
   const firstTimeRef = useRef(true);
 
   useFocusEffect(
@@ -19,4 +19,4 @@ export function useRefreshOnFocus<T>(
       refetch();
     }, [refetch, isStale]),
   );
-}
+};
