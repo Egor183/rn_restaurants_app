@@ -1,6 +1,6 @@
 import {useMutation} from '@tanstack/react-query';
 import {AxiosError} from 'axios';
-import {useCallback, useState} from 'react';
+import {useCallback, useState, useEffect} from 'react';
 import {ERRORS} from '@src/constants';
 import {showError} from '@src/helpers';
 import {useAppDispatch} from '@src/hooks/useAppDispatch';
@@ -19,7 +19,7 @@ export const useLogin = () => {
 
   const dispatch = useAppDispatch();
 
-  const {mutate, isLoading} = useMutation<
+  const {mutate, isLoading, isSuccess} = useMutation<
     LoginResponseType,
     AxiosError<string, number>,
     LoginParametersType
@@ -30,9 +30,6 @@ export const useLogin = () => {
           error?.request.status as keyof typeof ERRORS.AUTHENTICATION
         ],
       );
-    },
-    onSuccess: () => {
-      dispatch(loginActions.setIsLoggedIn(true));
     },
   });
 
@@ -55,6 +52,14 @@ export const useLogin = () => {
     },
     [mutate],
   );
+
+  useEffect(() => {
+    if (!isSuccess) {
+      return;
+    }
+
+    dispatch(loginActions.setIsLoggedIn(true));
+  }, [isSuccess, dispatch]);
 
   return {
     validationError,
