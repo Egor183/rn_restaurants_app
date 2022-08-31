@@ -4,9 +4,8 @@ import {
   RestaurantStatusesType,
 } from '../../services/api/fetchCuisines/types';
 
-type CuisinesRestaurantsIdsType = Record<
-  CuisinesType,
-  Record<RestaurantStatusesType, string[]>
+type CuisinesRestaurantsIdsType = Partial<
+  Record<CuisinesType, Record<RestaurantStatusesType, string[]>>
 >;
 
 interface RestaurantAllDataType extends RestaurantDataType {

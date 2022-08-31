@@ -5,8 +5,14 @@ export const selectRestaurantsIds = createSelector(
   (state: RootState) => state.restaurant.cuisinesRestaurantsIds,
   (state: RootState, id: string) => id,
   (cuisinesRestaurantsIds, id) => {
-    const {open, close} =
+    const cuisineRestaurantsIds =
       cuisinesRestaurantsIds[id as keyof typeof cuisinesRestaurantsIds];
+
+    if (!cuisineRestaurantsIds) {
+      return [];
+    }
+
+    const {open, close} = cuisineRestaurantsIds;
 
     return [...open, ...close];
   },

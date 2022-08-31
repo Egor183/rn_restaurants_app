@@ -1,6 +1,6 @@
 export type CuisinesType = 'chinese' | 'indian' | 'italian';
 
-type RestaurantStatusesType = 'close' | 'open';
+export type RestaurantStatusesType = 'close' | 'open';
 
 type RestaurantDataType = {
   currency: string;
