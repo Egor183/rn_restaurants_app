@@ -1,0 +1,1 @@
+export {getCuisineName} from './cuisine';

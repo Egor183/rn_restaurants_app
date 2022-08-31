@@ -1,32 +1,51 @@
-import {useState} from 'react';
-import {cuisineSelectors, normalizeFetchCuisines} from '../../models/cuisine';
+import {AxiosError} from 'axios';
+import {useQuery} from '@tanstack/react-query';
+import {ERRORS} from '@src/constants';
+import {getTimeInMinutes, getTimeInSeconds, showError} from '@src/helpers';
+import {useAppSelector} from '@src/hooks/useAppSelector';
+import {useAppDispatch} from '@src/hooks/useAppDispatch';
+import {
+  cuisineActions,
+  cuisineSelectors,
+  getNormalizedFetchCuisinesData,
+} from '../../models/cuisine';
 import {fetchCuisines} from '../../services/api';
+import {CuisinesFetchDataType} from '../../services/api/fetchCuisines/types';
+import {CUISINE_QUERY_PARAMS} from '../../constants';
 
 export const useCuisines = () => {
-  const cuisines = cuisineSelectors.selectCuisines();
-  const [error, setError] = useState<Error | null>(null);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-  // TODO: maybe something like react-query could help in here
-  // https://react-query.tanstack.com/
-  const fetch = () => {
-    setIsLoading(true);
-    try {
-      const response = normalizeFetchCuisines(fetchCuisines());
-      // TODO: update the store later when I completed my redux.
-      setIsLoading(false);
-    } catch (error) {
-      setError(error as Error);
-    }
-  };
+  const cuisines = useAppSelector(cuisineSelectors.selectCuisineIds);
 
-  if (isLoading) {
-    setError(null);
-  }
+  const dispatch = useAppDispatch();
+
+  const {isLoading} = useQuery<CuisinesFetchDataType, AxiosError>(
+    ['cuisines'],
+    fetchCuisines,
+    {
+      staleTime: getTimeInSeconds(
+        CUISINE_QUERY_PARAMS.STALE_TIME_NUMBER_OF_SECONDS,
+      ),
+      cacheTime: getTimeInMinutes(
+        CUISINE_QUERY_PARAMS.CACHE_TIME_NUMBER_OF_MINUTES,
+      ),
+      retry: CUISINE_QUERY_PARAMS.RETRY_ATTEMPTS,
+      onSuccess: data => {
+        const {cuisinesData, cuisineIds} = getNormalizedFetchCuisinesData(data);
+
+        dispatch(cuisineActions.setCuisine({cuisineIds, cuisinesData}));
+      },
+      onError: error => {
+        showError(
+          ERRORS.CUISINES[
+            error?.request.status as keyof typeof ERRORS.CUISINES
+          ],
+        );
+      },
+    },
+  );
 
   return {
     cuisines,
-    fetch,
     isLoading,
-    error,
   };
 };

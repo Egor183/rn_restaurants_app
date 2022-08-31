@@ -5,4 +5,8 @@ export const ERRORS = {
   AUTHENTICATION: {
     '401': 'You are not registered',
   },
+  CUISINES: {
+    '404':
+      'Unfortunately, now is not possible to fetch cuisines, please try again later',
+  },
 };
