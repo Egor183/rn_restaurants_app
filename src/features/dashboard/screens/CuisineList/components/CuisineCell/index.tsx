@@ -12,12 +12,14 @@ const CuisineCell: FC<Props> = ({id}) => {
   } = useCuisineCell(id);
 
   return (
-    <Pressable onPress={handlePressCuisineCell}>
+    <Pressable
+      onPress={handlePressCuisineCell}
+      style={[styles.mainContainer, styles.shadow]}>
       <ImageBackground
         source={{
           uri: cuisineImage,
         }}
-        style={styles.mainContainer}>
+        style={styles.imageBackground}>
         <View style={styles.contentContainer}>
           <Text style={styles.mediumBlackText}>{cuisineName}</Text>
           <Text style={styles.regularGrayText}>{numberOfPlaces} places</Text>

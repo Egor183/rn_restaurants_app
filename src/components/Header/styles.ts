@@ -13,6 +13,7 @@ export default ScaledSheet.create({
     backgroundColor: COLORS.WHITE,
     paddingVertical: 0,
     paddingHorizontal: 0,
+    borderBottomWidth: 0,
   },
 
   centerContainerStyle: {

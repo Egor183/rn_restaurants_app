@@ -14,7 +14,7 @@ const selectCuisinesData = createSelector(
 export const selectCuisineData = createSelector(
   selectCuisinesData,
   (state: RootState, id: string) => id,
-  (cuisinesData, id) => cuisinesData[id],
+  (cuisinesData, id) => cuisinesData[id as keyof typeof cuisinesData],
 );
 
 export const selectors = {

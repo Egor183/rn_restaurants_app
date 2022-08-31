@@ -4,6 +4,22 @@ import {setModerateScale, setModerateVerticalScale} from '@src/services/scale';
 
 const styles = ScaledSheet.create({
   mainContainer: {
+    borderRadius: 10,
+    backgroundColor: COLORS.WHITE,
+    marginHorizontal: 3,
+  },
+
+  shadow: {
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
+    elevation: Math.floor(3),
+  },
+
+  imageBackground: {
     aspectRatio: 2 / 1,
     width: '100%',
     borderRadius: 10,

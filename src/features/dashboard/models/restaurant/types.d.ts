@@ -4,7 +4,7 @@ import {
   RestaurantStatusesType,
 } from '../../services/api/fetchCuisines/types';
 
-type CuisineRestaurantsType = Record<
+type CuisinesRestaurantsIdsType = Record<
   CuisinesType,
   Record<RestaurantStatusesType, string[]>
 >;
@@ -16,6 +16,6 @@ interface RestaurantDataWithStatusType extends RestaurantDataType {
 type RestaurantsDataType = Record<string, RestaurantDataWithStatusType>;
 
 export type RestaurantStateType = {
-  cuisineRestaurants: CuisineRestaurantsType;
+  cuisinesRestaurantsIds: CuisinesRestaurantsIdsType;
   restaurantsData: RestaurantsDataType;
 };

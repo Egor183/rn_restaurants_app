@@ -2533,11 +2533,6 @@ color@^3.2.1:
     color-convert "^1.9.3"
     color-string "^1.6.0"
 
-colord@2.9.2:
-  version "2.9.2"
-  resolved "https://registry.yarnpkg.com/colord/-/colord-2.9.2.tgz#25e2bacbbaa65991422c07ea209e2089428effb1"
-  integrity sha512-Uqbg+J445nc1TKn4FoDPS6ZZqAvEDnwrH42yo8B40JSOgSLxMZ/gt3h4nmCtPLQeXhjJJkqBx7SCY35WnIixaQ==
-
 colorette@^1.0.7:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/colorette/-/colorette-1.4.0.tgz#5190fbb87276259a86ad700bff2c6d6faa3fca40"
@@ -6261,13 +6256,6 @@ react-native-screens@^3.13.1:
   dependencies:
     react-freeze "^1.0.0"
     warn-once "^0.1.0"
-
-react-native-shadow-2@^7.0.5:
-  version "7.0.5"
-  resolved "https://registry.yarnpkg.com/react-native-shadow-2/-/react-native-shadow-2-7.0.5.tgz#e371e9eb799edb42c7527696fa02fa9bb2cc12c5"
-  integrity sha512-nmYuyv0SFMZpFf7RDxsf1638IfA2E7VSKkQf2D/t5R/i0/wSlQN/2gvg41mO7oam4/tt+jQJc2XqICCmvxm/FA==
-  dependencies:
-    colord "2.9.2"
 
 react-native-size-matters@^0.4.0:
   version "0.4.0"

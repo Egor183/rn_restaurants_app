@@ -3,12 +3,31 @@ import {COLORS} from '@src/constants';
 import {setModerateScale, setModerateVerticalScale} from '@src/services/scale';
 
 const styles = ScaledSheet.create({
+  shadow: {
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
+    elevation: Math.floor(3),
+  },
+
   container: {
+    borderRadius: 10,
+    backgroundColor: COLORS.WHITE,
+    marginHorizontal: 3,
+  },
+
+  fullWidth: {
+    width: '100%',
+    marginBottom: 10,
+    paddingHorizontal: 1,
     borderRadius: 10,
     backgroundColor: COLORS.WHITE,
   },
 
-  mainContainer: {
+  image: {
     aspectRatio: 2 / 1,
     width: '100%',
     borderTopLeftRadius: 10,
@@ -37,6 +56,7 @@ const styles = ScaledSheet.create({
     fontFamily: 'Roboto-Medium',
     fontSize: setModerateVerticalScale(16),
     color: COLORS.DARK_BLUE,
+    textAlign: 'center',
   },
 
   regularBlueText: {
@@ -66,6 +86,10 @@ const styles = ScaledSheet.create({
     alignItems: 'center',
     paddingHorizontal: setModerateScale(15),
     paddingVertical: setModerateScale(10),
+  },
+
+  dashContainer: {
+    overflow: 'hidden',
   },
 });
 

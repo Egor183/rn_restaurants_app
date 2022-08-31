@@ -2,12 +2,12 @@ import React, {memo} from 'react';
 import {FlatList, View} from 'react-native';
 import MainContainer from '@src/components/MainContainer';
 import ButtonBack from '@src/components/Buttons/ButtonBack';
+import Loader from '@src/components/Loader';
 import {useCuisines} from '../../hooks';
 import CuisineCell from './components/CuisineCell';
 import {RenderItemType} from './types';
 
 import styles from './styles';
-import Loader from '@src/components/Loader';
 
 const CuisineList = () => {
   const {cuisines, isLoading} = useCuisines();
@@ -29,7 +29,7 @@ const CuisineList = () => {
         keyExtractor={item => item}
         data={cuisines}
         initialNumToRender={8}
-        maxToRenderPerBatch={5}
+        maxToRenderPerBatch={8}
         showsVerticalScrollIndicator={false}
       />
     </MainContainer>

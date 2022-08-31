@@ -7,7 +7,7 @@ export const useNavigation = () => {
     navigate: navigateReactNavigation,
   } = useReactNavigation();
 
-  const goBack = () => {
+  const goBack = (): void => {
     if (!canGoBack) {
       return;
     }

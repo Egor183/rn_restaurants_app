@@ -22,3 +22,5 @@ export const DELIVERY_ICON_PARAMS = {
   color: COLORS.DARK_GRAY,
   size: moderateVerticalScale(14),
 };
+
+export const MIN_GOOD_RESTAURANT_RATING = 5;

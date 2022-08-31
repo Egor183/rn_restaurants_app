@@ -1,11 +1,11 @@
-import {CuisineRestaurantsType, RestaurantStateType} from './types.d';
+import {CuisinesRestaurantsIdsType, RestaurantStateType} from './types.d';
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 
 type InitialStateType = RestaurantStateType;
 
 const initialState: InitialStateType = {
   // similar situation like a CuisineData in cuisine slice
-  cuisineRestaurants: {} as CuisineRestaurantsType,
+  cuisinesRestaurantsIds: {} as CuisinesRestaurantsIdsType,
   restaurantsData: {},
 };
 
@@ -14,9 +14,9 @@ export const restaurantSlice = createSlice({
   initialState,
   reducers: {
     setRestaurant: (state, action: PayloadAction<InitialStateType>) => {
-      const {cuisineRestaurants, restaurantsData} = action.payload;
+      const {cuisinesRestaurantsIds, restaurantsData} = action.payload;
 
-      state.cuisineRestaurants = cuisineRestaurants;
+      state.cuisinesRestaurantsIds = cuisinesRestaurantsIds;
       state.restaurantsData = restaurantsData;
     },
   },

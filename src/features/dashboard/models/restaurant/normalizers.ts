@@ -20,7 +20,7 @@ export const getNormalizedRestaurantsData = (
   );
 
   const cuisinesRestaurantsSchema = new schema.Entity(
-    'cuisineRestaurants',
+    'cuisinesRestaurantsIds',
     {open: [restaurantsDataSchema], close: [restaurantsDataSchema]},
     {
       idAttribute: (value, parent) => getCuisineName(value, parent),
@@ -32,8 +32,8 @@ export const getNormalizedRestaurantsData = (
   );
 
   const {
-    entities: {restaurantsData, cuisineRestaurants},
+    entities: {restaurantsData, cuisinesRestaurantsIds},
   } = normalize(response, [cuisinesRestaurantsSchema]);
 
-  return {restaurantsData, cuisineRestaurants} as RestaurantStateType;
+  return {restaurantsData, cuisinesRestaurantsIds} as RestaurantStateType;
 };

@@ -11,8 +11,8 @@ export const useCuisineCell = (id: string) => {
   );
 
   const handlePressCuisineCell = useCallback(() => {
-    navigate(ROUTES.RESTAURANTS);
-  }, [navigate]);
+    navigate(ROUTES.RESTAURANTS, {cuisine: id});
+  }, [navigate, id]);
 
   return {cuisineData, handlePressCuisineCell};
 };

@@ -9,10 +9,12 @@ import styles from './styles';
 const ButtonBack: FC<Props> = ({
   iconSize = moderateVerticalScale(20),
   isLeftHeaderComponent = true,
+  onPress,
 }) => (
   <Button
     color={COLORS.TRANSPARENT}
-    buttonStyle={isLeftHeaderComponent && styles.noPaddingLeft}>
+    buttonStyle={isLeftHeaderComponent && styles.noPaddingLeft}
+    onPress={onPress}>
     <Icon
       name="chevron-thin-left"
       color={COLORS.LIGHT_BLACK}
