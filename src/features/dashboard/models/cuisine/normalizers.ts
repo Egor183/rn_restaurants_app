@@ -7,7 +7,7 @@ import {CuisineStateType} from './types';
 export const getNormalizedFetchCuisinesData = (
   response: CuisinesFetchDataType,
 ): CuisineStateType => {
-  const cuisinesSchema = new schema.Entity(
+  const cuisinesDataSchema = new schema.Entity(
     'cuisinesData',
     {},
     {
@@ -26,7 +26,7 @@ export const getNormalizedFetchCuisinesData = (
   const {
     entities: {cuisinesData},
     result: cuisineIds,
-  } = normalize(response, [cuisinesSchema]);
+  } = normalize(response, [cuisinesDataSchema]);
 
   return {cuisinesData, cuisineIds} as CuisineStateType;
 };

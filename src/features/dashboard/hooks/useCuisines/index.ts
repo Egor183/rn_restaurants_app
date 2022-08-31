@@ -8,6 +8,10 @@ import {
   cuisineSelectors,
   getNormalizedFetchCuisinesData,
 } from '../../models/cuisine';
+import {
+  getNormalizedRestaurantsData,
+  restaurantActions,
+} from '../../models/restaurant';
 import {fetchCuisines} from '../../services/api';
 import {CuisinesFetchDataType} from '../../services/api/fetchCuisines/types';
 import {CUISINE_QUERY_PARAMS} from '../../constants';
@@ -29,9 +33,11 @@ export const useCuisines = () => {
       ),
       retry: CUISINE_QUERY_PARAMS.RETRY_ATTEMPTS,
       onSuccess: data => {
-        const {cuisinesData, cuisineIds} = getNormalizedFetchCuisinesData(data);
+        const cuisine = getNormalizedFetchCuisinesData(data);
+        const restaurant = getNormalizedRestaurantsData(data);
 
-        dispatch(cuisineActions.setCuisine({cuisineIds, cuisinesData}));
+        dispatch(cuisineActions.setCuisine(cuisine));
+        dispatch(restaurantActions.setRestaurant(restaurant));
       },
       onError: error => {
         showError(

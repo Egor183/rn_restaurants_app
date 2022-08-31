@@ -1,3 +1,5 @@
+import {CuisinesType} from '../../services/api/fetchCuisines/types';
+
 export type CuisineDataType = Record<
   CuisinesType,
   {
@@ -11,5 +13,5 @@ type CuisineIdsType = string[];
 
 export type CuisineStateType = {
   cuisinesData: CuisineDataType;
-  cuisineIds: cuisineIdsType;
+  cuisineIds: CuisineIdsType;
 };
