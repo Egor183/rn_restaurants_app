@@ -3,16 +3,16 @@ import {ROUTES} from '@src/constants/routes';
 import {useAppSelector, useNavigation} from '@src/hooks';
 import {cuisineSelectors} from '../../models/cuisine';
 
-export const useCuisineCell = (id: string) => {
+export const useCuisineCell = (cuisineId: string) => {
   const {navigate} = useNavigation();
 
   const cuisineData = useAppSelector(state =>
-    cuisineSelectors.selectCuisineData(state, id),
+    cuisineSelectors.selectCuisineData(state, cuisineId),
   );
 
   const handlePressCuisineCell = useCallback(() => {
-    navigate(ROUTES.RESTAURANTS, {cuisine: id});
-  }, [navigate, id]);
+    navigate(ROUTES.RESTAURANTS, {cuisineId: cuisineId});
+  }, [navigate, cuisineId]);
 
   return {cuisineData, handlePressCuisineCell};
 };

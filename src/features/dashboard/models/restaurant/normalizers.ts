@@ -1,4 +1,5 @@
 import {normalize, schema} from 'normalizr';
+import {RESTAURANT_STATUSES} from '../../constants';
 import {getCuisineName} from '../../helpers';
 import {CuisinesFetchDataType} from '../../services/api/fetchCuisines/types';
 import {RestaurantStateType} from './types';
@@ -14,6 +15,7 @@ export const getNormalizedRestaurantsData = (
         return {
           ...value,
           status: key,
+          isRestaurantClosed: key === RESTAURANT_STATUSES.CLOSE,
         };
       },
     },

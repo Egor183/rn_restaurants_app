@@ -10,6 +10,7 @@ export enum COLORS {
   DARK_RED = '#C10303',
   LIGHT_BLACK = '#333233',
   TRANSPARENT = 'transparent',
+  BLACK = '#000000',
 }
 
 export const GRADIENTS = {

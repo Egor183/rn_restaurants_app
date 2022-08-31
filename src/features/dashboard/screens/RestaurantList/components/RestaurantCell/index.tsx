@@ -1,6 +1,6 @@
 import React, {FC, memo} from 'react';
 import Dash from 'react-native-dash';
-import {Image, Pressable, Text, View} from 'react-native';
+import {ImageBackground, Pressable, Text, View} from 'react-native';
 import {Icon} from '@rneui/themed';
 import {COLORS, CURRENCY_SYMBOLS, TEXT_SYMBOLS} from '@src/constants';
 import {useRestaurantCell} from '@src/features/dashboard/hooks';
@@ -10,7 +10,7 @@ import {Props} from './props';
 
 import styles from './styles';
 
-const RestaurantCell: FC<Props> = ({id}) => {
+const RestaurantCell: FC<Props> = ({restaurantId}) => {
   const {
     restaurantData: {
       imageUrl,
@@ -21,24 +21,31 @@ const RestaurantCell: FC<Props> = ({id}) => {
       rating,
       currency,
       deliveryCost,
+      isRestaurantClosed,
     },
-    handlePressCuisineCell,
+    handlePressRestaurantCell,
     restaurantRatingIconParams,
-  } = useRestaurantCell(id);
+  } = useRestaurantCell(restaurantId);
 
   return (
     <Pressable
       style={[styles.container, styles.shadow]}
-      onPress={handlePressCuisineCell}>
-      <Image
+      onPress={handlePressRestaurantCell}>
+      <ImageBackground
         source={{
           uri: imageUrl,
         }}
-        style={styles.image}
-      />
+        imageStyle={isRestaurantClosed && styles.halfOpacity}
+        style={styles.imageBackground}>
+        {isRestaurantClosed ? (
+          <Text style={[styles.regularGrayText, styles.closedText]}>
+            Closed
+          </Text>
+        ) : null}
+      </ImageBackground>
       <View style={styles.contentContainer}>
         <View style={styles.restaurantInfoContainer}>
-          <Text style={styles.mediumBlackText}>{restaurantName}"</Text>
+          <Text style={styles.mediumBlackText}>{restaurantName}</Text>
           <Text style={styles.regularGrayText}>{shortDesc}</Text>
         </View>
         <BlueBadge

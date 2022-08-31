@@ -71,6 +71,7 @@ const styles = ScaledSheet.create({
 
   blueBadgeMainTextStyles: {
     fontFamily: 'Roboto-Bold',
+    fontSize: setModerateVerticalScale(14),
   },
 
   blueBadgeContainerStyles: {

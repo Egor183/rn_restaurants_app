@@ -4,13 +4,16 @@ import {restaurantSelectors} from '../../models/restaurant';
 import {RestaurantsScreenRoutePropType} from './types';
 
 export const useRestaurants = () => {
-  const {params} = useRoute<RestaurantsScreenRoutePropType>();
+  const {
+    params: {cuisineId},
+  } = useRoute<RestaurantsScreenRoutePropType>();
 
   const restaurantsIds = useAppSelector(state =>
-    restaurantSelectors.selectRestaurantsIds(state, params.cuisine),
+    restaurantSelectors.selectRestaurantsIds(state, cuisineId),
   );
 
   return {
     restaurantsIds,
+    cuisineId,
   };
 };

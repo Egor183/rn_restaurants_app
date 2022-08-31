@@ -5,9 +5,11 @@ import {useRestaurantData} from '../useRestaurantData';
 import {RestaurantsDetailScreenRoutePropType} from './types';
 
 export const useRestaurantDetail = () => {
-  const {params} = useRoute<RestaurantsDetailScreenRoutePropType>();
+  const {
+    params: {restaurantId},
+  } = useRoute<RestaurantsDetailScreenRoutePropType>();
 
-  const restaurantData = useRestaurantData(params.id);
+  const restaurantData = useRestaurantData(restaurantId);
 
   const currentRestaurantData = useMemo(
     () => ({

@@ -19,19 +19,15 @@ const styles = ScaledSheet.create({
     marginHorizontal: 3,
   },
 
-  fullWidth: {
-    width: '100%',
-    marginBottom: 10,
-    paddingHorizontal: 1,
-    borderRadius: 10,
-    backgroundColor: COLORS.WHITE,
-  },
-
-  image: {
+  imageBackground: {
     aspectRatio: 2 / 1,
     width: '100%',
-    borderTopLeftRadius: 10,
-    borderTopRightRadius: 10,
+    backgroundColor: COLORS.BLACK,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderTopStartRadius: 10,
+    borderTopEndRadius: 10,
+    overflow: 'hidden',
   },
 
   contentContainer: {
@@ -52,28 +48,8 @@ const styles = ScaledSheet.create({
     color: COLORS.DARK_GRAY,
   },
 
-  mediumBlueText: {
-    fontFamily: 'Roboto-Medium',
-    fontSize: setModerateVerticalScale(16),
-    color: COLORS.DARK_BLUE,
-    textAlign: 'center',
-  },
-
-  regularBlueText: {
-    fontFamily: 'Roboto-Regular',
-    fontSize: setModerateVerticalScale(14),
-    color: COLORS.DARK_BLUE,
-    textAlign: 'center',
-  },
-
   restaurantInfoContainer: {
     justifyContent: 'space-between',
-  },
-
-  blueBadge: {
-    backgroundColor: COLORS.LIGHT_BLUE,
-    padding: setModerateScale(7),
-    borderRadius: 10,
   },
 
   divider: {
@@ -90,6 +66,15 @@ const styles = ScaledSheet.create({
 
   dashContainer: {
     overflow: 'hidden',
+  },
+
+  halfOpacity: {
+    opacity: 0.5,
+  },
+
+  closedText: {
+    color: COLORS.WHITE,
+    fontSize: setModerateScale(18),
   },
 });
 

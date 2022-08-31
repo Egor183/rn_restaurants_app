@@ -7,6 +7,7 @@ export default ScaledSheet.create({
     color: COLORS.LIGHT_BLACK,
     fontFamily: 'Roboto-Medium',
     fontSize: setModerateVerticalScale(18),
+    textTransform: 'capitalize',
   },
 
   containerStyle: {

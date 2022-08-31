@@ -21,7 +21,7 @@ export const useLogin = () => {
 
   const {mutate, isLoading} = useMutation<
     LoginResponseType,
-    AxiosError,
+    AxiosError<string, number>,
     LoginParametersType
   >(({email, password}) => login({email, password}), {
     onError: error => {

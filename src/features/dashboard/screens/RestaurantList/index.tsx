@@ -3,26 +3,30 @@ import {FlatList, View} from 'react-native';
 import {useNavigation} from '@src/hooks';
 import MainContainer from '@src/components/MainContainer';
 import ButtonBack from '@src/components/Buttons/ButtonBack';
+import Header from '@src/components/Header';
 import {useRestaurants} from '../../hooks';
 import RestaurantCell from './components/RestaurantCell';
 
 import styles from './styles';
-import Header from '@src/components/Header';
 
 const RestaurantList = () => {
-  const {restaurantsIds} = useRestaurants();
+  const {restaurantsIds, cuisineId} = useRestaurants();
   const {goBack} = useNavigation();
 
   const renderItem = ({item}: {item: string}) => (
     <View style={styles.restaurantCellContainer}>
-      <RestaurantCell key={item} id={item} />
+      <RestaurantCell key={item} restaurantId={item} />
     </View>
   );
 
   return (
     <MainContainer>
-      <Header leftComponent={<ButtonBack onPress={goBack} />} />
+      <Header
+        leftComponent={<ButtonBack onPress={goBack} />}
+        title={cuisineId}
+      />
       <FlatList
+        contentContainerStyle={styles.pb40}
         renderItem={renderItem}
         keyExtractor={item => item}
         data={restaurantsIds}

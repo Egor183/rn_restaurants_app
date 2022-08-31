@@ -5,6 +5,10 @@ const styles = ScaledSheet.create({
   cuisineCellContainer: {
     marginTop: setModerateVerticalScale(20),
   },
+
+  pb40: {
+    paddingBottom: setModerateVerticalScale(40),
+  },
 });
 
 export default styles;

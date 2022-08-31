@@ -9,11 +9,12 @@ type CuisinesRestaurantsIdsType = Record<
   Record<RestaurantStatusesType, string[]>
 >;
 
-interface RestaurantDataWithStatusType extends RestaurantDataType {
+interface RestaurantAllDataType extends RestaurantDataType {
   status: RestaurantStatusesType;
+  isRestaurantClosed: boolean;
 }
 
-type RestaurantsDataType = Record<string, RestaurantDataWithStatusType>;
+type RestaurantsDataType = Record<string, RestaurantAllDataType>;
 
 export type RestaurantStateType = {
   cuisinesRestaurantsIds: CuisinesRestaurantsIdsType;

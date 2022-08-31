@@ -24,3 +24,8 @@ export const DELIVERY_ICON_PARAMS = {
 };
 
 export const MIN_GOOD_RESTAURANT_RATING = 5;
+
+export enum RESTAURANT_STATUSES {
+  OPEN = 'open',
+  CLOSE = 'close',
+}
