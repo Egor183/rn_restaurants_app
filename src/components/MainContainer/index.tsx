@@ -1,7 +1,7 @@
 import React, {FC, memo} from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {COLORS, EDGES} from '@src/constants';
-import {Props} from './types';
+import {Props} from './props';
 
 import styles from './styles';
 

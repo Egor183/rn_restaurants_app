@@ -1,7 +1,7 @@
 import React, {FC, memo} from 'react';
 import {ImageBackground, Pressable, Text, View} from 'react-native';
 import {useCuisineCell} from '../../../../hooks';
-import {Props} from './types';
+import {Props} from './props';
 
 import styles from './styles';
 

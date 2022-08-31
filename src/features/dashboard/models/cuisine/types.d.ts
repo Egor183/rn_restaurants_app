@@ -1,15 +1,12 @@
 import {CuisinesType} from '../../services/api/fetchCuisines/types';
 
-export type CuisineDataType = Partial<
-  Record<
-    CuisinesType,
-    {
-      cuisineImage: string;
-      cuisineName: string;
-      numberOfPlaces: number;
-    }
-  >
->;
+export type CuisineDataType = {
+  [key: CuisinesType]: {
+    cuisineImage: string;
+    cuisineName: string;
+    numberOfPlaces: number;
+  };
+};
 
 export type CuisineIdsType = CuisinesType[];
 
