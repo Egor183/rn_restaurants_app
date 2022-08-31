@@ -14,7 +14,8 @@ const CuisineCell: FC<Props> = ({id}) => {
   return (
     <Pressable
       onPress={handlePressCuisineCell}
-      style={[styles.mainContainer, styles.shadow]}>
+      style={[styles.mainContainer, styles.shadow]}
+      testID="cuisineCell">
       <ImageBackground
         source={{
           uri: cuisineImage,

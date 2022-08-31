@@ -30,7 +30,8 @@ const RestaurantCell: FC<Props> = ({restaurantId}) => {
   return (
     <Pressable
       style={[styles.container, styles.shadow]}
-      onPress={handlePressRestaurantCell}>
+      onPress={handlePressRestaurantCell}
+      testID="restaurantCell">
       <ImageBackground
         source={{
           uri: imageUrl,
