@@ -3,17 +3,21 @@ import {AxiosError} from 'axios';
 import {useCallback, useState} from 'react';
 import {ERRORS} from '@src/constants';
 import {showError} from '@src/helpers';
+import {useAppDispatch} from '@src/hooks/useAppDispatch';
 import {login} from '../../services/api';
 import {validateAuth} from '../../utils/validations';
 import {
   LoginParametersType,
   LoginResponseType,
 } from '../../services/api/login/types.d';
+import {loginActions} from '../../models/login';
 import {ValidationErrorType} from './types';
 
 export const useLogin = () => {
   const [validationError, setValidationError] =
     useState<ValidationErrorType>(undefined);
+
+  const dispatch = useAppDispatch();
 
   const {mutate, isLoading} = useMutation<
     LoginResponseType,
@@ -26,6 +30,9 @@ export const useLogin = () => {
           error?.request.status as keyof typeof ERRORS.AUTHENTICATION
         ],
       );
+    },
+    onSuccess: () => {
+      dispatch(loginActions.setIsLoggedIn(true));
     },
   });
 
