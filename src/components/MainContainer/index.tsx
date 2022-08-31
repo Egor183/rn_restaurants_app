@@ -10,7 +10,7 @@ const MainContainer: FC<Props> = ({
   children,
   edges = [EDGES.LEFT, EDGES.RIGHT],
   backgroundColor = COLORS.WHITE,
-  withPaddingHorizontal,
+  withPaddingHorizontal = true,
   leftComponent,
   title,
   rightComponent,

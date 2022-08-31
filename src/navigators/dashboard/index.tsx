@@ -10,12 +10,12 @@ const Stack = createNativeStackNavigator();
 const DashboardNavigation: FC = () => {
   return (
     <Stack.Navigator
-      initialRouteName={ROUTES.CUISINES}
+      initialRouteName={ROUTES.RESTAURANTS}
       screenOptions={{
         headerShown: false,
       }}>
       <Stack.Screen name={ROUTES.CUISINES} component={CuisineList} />
-      <Stack.Screen name={ROUTES.DASHBOARD} component={RestaurantList} />
+      <Stack.Screen name={ROUTES.RESTAURANTS} component={RestaurantList} />
       <Stack.Screen name={ROUTES.DETAIL} component={RestaurantDetail} />
     </Stack.Navigator>
   );

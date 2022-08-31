@@ -23,7 +23,7 @@ const CuisineList = () => {
   }
 
   return (
-    <MainContainer withPaddingHorizontal leftComponent={<ButtonBack />}>
+    <MainContainer leftComponent={<ButtonBack />}>
       <FlatList
         renderItem={renderItem}
         keyExtractor={item => item}

@@ -16,7 +16,7 @@ const Login = () => {
   const initialValues: LoginParametersType = {email: '', password: ''};
 
   return (
-    <MainContainer withHeader={false}>
+    <MainContainer withHeader={false} withPaddingHorizontal={false}>
       <LinearGradient
         colors={GRADIENTS.PURPLE_BLUE}
         style={styles.linearGradient}

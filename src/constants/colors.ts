@@ -1,5 +1,7 @@
 export enum COLORS {
-  BLUE = '#2BD6FD',
+  MEDIUM_BLUE = '#2BD6FD',
+  DARK_BLUE = '#07ADF5',
+  LIGHT_BLUE = '#C4EDF6',
   PURPLE = '#DB19FF',
   WHITE = 'white',
   DARK_GRAY = '#76767A',
@@ -11,5 +13,5 @@ export enum COLORS {
 }
 
 export const GRADIENTS = {
-  PURPLE_BLUE: [COLORS.PURPLE, COLORS.BLUE],
+  PURPLE_BLUE: [COLORS.PURPLE, COLORS.MEDIUM_BLUE],
 };

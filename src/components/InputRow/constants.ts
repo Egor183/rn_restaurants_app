@@ -9,6 +9,6 @@ export const INPUT_ICON_PARAMS = {
   VALID_VALUE_ICON: {
     type: 'material-community',
     name: 'check-circle',
-    color: COLORS.BLUE,
+    color: COLORS.MEDIUM_BLUE,
   },
 };

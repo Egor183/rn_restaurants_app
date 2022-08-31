@@ -1,19 +1,18 @@
-import {ScrollView} from 'react-native';
+import ButtonBack from '@src/components/Buttons/ButtonBack';
+import MainContainer from '@src/components/MainContainer';
+import React, {memo} from 'react';
 import {useRestaurants} from '../../hooks';
-import RestaurantCell from './components/Cell';
+import RestaurantCell from './components/RestaurantCell';
 
 const RestaurantList = () => {
   const cuisine = '';
   const {restaurants} = useRestaurants({cuisine});
 
-  //TODO: I feel like this not the best solution. later I will refactor it.
   return (
-    <ScrollView>
-      {restaurants.map(item => (
-        <RestaurantCell />
-      ))}
-    </ScrollView>
+    <MainContainer leftComponent={<ButtonBack />} title="Italian">
+      <RestaurantCell />
+    </MainContainer>
   );
 };
 
-export default RestaurantList;
+export default memo(RestaurantList);
