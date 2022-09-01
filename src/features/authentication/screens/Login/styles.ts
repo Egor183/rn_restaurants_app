@@ -13,7 +13,7 @@ const styles = ScaledSheet.create({
     paddingTop: setModerateVerticalScale(50),
     paddingHorizontal: setModerateScale(32),
     marginTop: -20,
-    backgroundColor: 'white',
+    backgroundColor: COLORS.WHITE,
   },
 
   mainText: {
