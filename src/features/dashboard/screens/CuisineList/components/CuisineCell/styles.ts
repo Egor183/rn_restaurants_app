@@ -23,7 +23,6 @@ const styles = ScaledSheet.create({
     aspectRatio: 2 / 1,
     width: '100%',
     borderRadius: 10,
-    overflow: 'hidden',
   },
 
   contentContainer: {

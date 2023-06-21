@@ -1,5 +1,6 @@
 import React, {FC, memo} from 'react';
-import {ImageBackground, StatusBar, Text, View} from 'react-native';
+import {StatusBar, Text, View} from 'react-native';
+import FastImage from 'react-native-fast-image';
 import {COLORS} from '@src/constants';
 import {useBarStyle, useNavigation} from '@src/hooks';
 import MainContainer from '@src/components/MainContainer';
@@ -40,7 +41,7 @@ const RestaurantDetail: FC = () => {
         />
         <StatusBar barStyle={barStyle} />
       </View>
-      <ImageBackground
+      <FastImage
         source={{
           uri: imageUrl,
         }}
@@ -51,7 +52,7 @@ const RestaurantDetail: FC = () => {
           </View>
           <WhiteBadge text={`MIN. ORDER: ${minOrder.toFixed(2)}`} />
         </View>
-      </ImageBackground>
+      </FastImage>
       <View style={styles.ph24}>
         <Text style={styles.mediumBlackText}>{restaurantName}</Text>
         <Text style={[styles.regularGrayText, styles.mt10]}>{shortDesc}</Text>

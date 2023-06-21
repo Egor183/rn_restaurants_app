@@ -22,12 +22,16 @@ const styles = ScaledSheet.create({
   imageBackground: {
     aspectRatio: 2 / 1,
     width: '100%',
-    backgroundColor: COLORS.BLACK,
+    borderTopStartRadius: 10,
+    borderTopEndRadius: 10,
+  },
+
+  fastImageWrapper: {
     alignItems: 'center',
     justifyContent: 'center',
     borderTopStartRadius: 10,
     borderTopEndRadius: 10,
-    overflow: 'hidden',
+    backgroundColor: COLORS.BLACK,
   },
 
   contentContainer: {
@@ -75,6 +79,8 @@ const styles = ScaledSheet.create({
   closedText: {
     color: COLORS.WHITE,
     fontSize: setModerateScale(18),
+    position: 'absolute',
+    zIndex: 2,
   },
 });
 

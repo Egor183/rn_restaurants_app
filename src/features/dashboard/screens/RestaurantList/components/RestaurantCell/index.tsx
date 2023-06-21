@@ -1,6 +1,7 @@
 import React, {FC, memo} from 'react';
 import Dash from 'react-native-dash';
-import {ImageBackground, Pressable, Text, View} from 'react-native';
+import FastImage from 'react-native-fast-image';
+import {Pressable, Text, View} from 'react-native';
 import {Icon} from '@rneui/themed';
 import {COLORS, CURRENCY_SYMBOLS, TEXT_SYMBOLS} from '@src/constants';
 import {useRestaurantCell} from '@src/features/dashboard/hooks';
@@ -32,18 +33,23 @@ const RestaurantCell: FC<Props> = ({restaurantId}) => {
       style={[styles.container, styles.shadow]}
       onPress={handlePressRestaurantCell}
       testID="restaurantCell">
-      <ImageBackground
-        source={{
-          uri: imageUrl,
-        }}
-        imageStyle={isRestaurantClosed && styles.halfOpacity}
-        style={styles.imageBackground}>
+      <View style={styles.fastImageWrapper}>
         {isRestaurantClosed ? (
           <Text style={[styles.regularGrayText, styles.closedText]}>
             Closed
           </Text>
         ) : null}
-      </ImageBackground>
+        <FastImage
+          source={{
+            uri: imageUrl,
+          }}
+          style={[
+            styles.imageBackground,
+            isRestaurantClosed && styles.halfOpacity,
+          ]}
+        />
+      </View>
+
       <View style={styles.contentContainer}>
         <View style={styles.restaurantInfoContainer}>
           <Text style={styles.mediumBlackText}>{restaurantName}</Text>

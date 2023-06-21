@@ -1,5 +1,6 @@
 import React, {FC, memo} from 'react';
-import {ImageBackground, Pressable, Text, View} from 'react-native';
+import {Pressable, Text, View} from 'react-native';
+import FastImage from 'react-native-fast-image';
 import {useCuisineCell} from '../../../../hooks';
 import {Props} from './props';
 
@@ -16,7 +17,7 @@ const CuisineCell: FC<Props> = ({id}) => {
       onPress={handlePressCuisineCell}
       style={[styles.mainContainer, styles.shadow]}
       testID="cuisineCell">
-      <ImageBackground
+      <FastImage
         source={{
           uri: cuisineImage,
         }}
@@ -25,7 +26,7 @@ const CuisineCell: FC<Props> = ({id}) => {
           <Text style={styles.mediumBlackText}>{cuisineName}</Text>
           <Text style={styles.regularGrayText}>{numberOfPlaces} places</Text>
         </View>
-      </ImageBackground>
+      </FastImage>
     </Pressable>
   );
 };
